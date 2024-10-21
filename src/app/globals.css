@@ -1,27 +1,86 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e0f7fa; /* Azul muy pálido */
+  font-family: "Roboto", sans-serif;
+  color: #333333 !important; /* Gris oscuro para texto */
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1,
+h2 {
+  color: #004d40; /* Verde oscuro */
+}
+
+p {
+  color: #333333; /* Gris oscuro */
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.MuiButton-containedPrimary {
+  background-color: #1976d2; /* Botón primary azul */
+}
+
+.MuiButton-containedSecondary {
+  background-color: #ff4081; /* Botón secondary rosa */
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: #115293; /* Azul más oscuro en hover */
+}
+
+.MuiButton-containedSecondary:hover {
+  background-color: #c51162; /* Rosa más oscuro en hover */
+}
+
+.navbar {
+  background-color: #1d3557; /* Azul oscuro */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #ffffff; /* Blanco para texto */
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  color: #a8dadc; /* Azul claro para hover */
+}
+
+footer {
+  background-color: #f4f1de; /* Beige claro */
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  color: #333333; /* Gris oscuro */
+  margin: 0;
+  font-size: 14px;
+}
+
+footer a {
+  color: #004d40; /* Verde oscuro */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #1976d2; /* Azul primary para hover */
 }
