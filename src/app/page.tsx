@@ -1,5 +1,3 @@
-"use client";
-
 import ContactForm from "./components/ContactForm";
 import Link from "next/link";
 import LandingPage from "./components/LadingPage";
