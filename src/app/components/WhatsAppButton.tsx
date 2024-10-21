@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
         allowEsc // Permite cerrar el chat con la tecla Esc
         notification // Activa la burbuja de notificación
         notificationSound // Sonido de notificación
-        style={{ zIndex: 1000, position: "fixed", bottom: "20px", right: 20px }} // Para asegurarnos de que siempre esté visible
+        style={{ zIndex: 1000 }} // Para asegurarnos de que siempre esté visible
       />
       {/*    // // <Button
     //   variant="contained"
