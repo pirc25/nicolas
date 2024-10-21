@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
         phoneNumber="593979253802" // Tu número de WhatsApp
         accountName="Nicolás - Asesor de Estudios"
         statusMessage="¡Responde en menos de una hora!"
-        chatMessage="¡Hola! 👋 ¿Listo/a para conocer las oportunidades de estudiar en Salamanca? Escríbeme tu nombre y qué te gustaría estudiar para poder ayudarte."
+        chatMessage="¡Hola! 👋 ¿Listo/a para conocer las oportunidades de estudiar en Salamanca?"
         placeholder="Escribe tu nombre y qué deseas estudiar..."
         avatar={CaraNico.src} // Usamos una imagen personalizada
         allowClickAway // Permite cerrar el chat al hacer clic fuera
