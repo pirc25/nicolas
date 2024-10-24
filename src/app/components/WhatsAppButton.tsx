@@ -10,13 +10,14 @@ const WhatsAppButton = () => {
   return (
     <div className="App">
       <FloatingWhatsApp
-        phoneNumber="593979253802" // Tu número de WhatsApp
+        phoneNumber="34687881377" // Tu número de WhatsApp
         accountName="Nicolás - Asesor de Estudios"
         statusMessage="¡Responde en menos de una hora!"
-        chatMessage="¡Hola! 👋 ¿Listo/a para conocer las oportunidades de estudiar en Salamanca?"
+        chatMessage="¡Hola! 👋 ¿Listo/a para conocer las oportunidades de estudiar en Salamanca? Escríbeme tu nombre y qué te gustaría estudiar para poder ayudarte."
+        chatboxHeight={400}
         placeholder="Escribe tu nombre y qué deseas estudiar..."
         avatar={CaraNico.src} // Usamos una imagen personalizada
-        allowClickAway // Permite cerrar el chat al hacer clic fuera
+        // allowClickAway // Permite cerrar el chat al hacer clic fuera
         allowEsc // Permite cerrar el chat con la tecla Esc
         notification // Activa la burbuja de notificación
         notificationSound // Sonido de notificación

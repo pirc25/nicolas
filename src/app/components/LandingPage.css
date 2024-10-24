@@ -1,0 +1,11 @@
+/* @media (max-width: 1024px) {
+  .image-container {
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    width: 1rem !important;
+  }
+} */
