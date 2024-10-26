@@ -1,6 +1,7 @@
 import ContactForm from "./components/ContactForm";
 import Link from "next/link";
 import LandingPage from "./components/LadingPage";
+import Carrusel from "./components/Carrusel";
 
 export default function Home() {
   return (

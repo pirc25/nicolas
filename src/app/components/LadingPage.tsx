@@ -20,6 +20,7 @@ import Grid from "@mui/material/Grid2";
 import Image from "next/image";
 import "./LandingPage.css";
 import ContactForm from "./ContactForm";
+import Carrusel from "./Carrusel";
 
 const nacionalidades = [
   "Argentina",
@@ -181,7 +182,8 @@ const LandingPage = () => {
                 height: "auto", // Mantener la proporción de la imagen
               }}
             >
-              <Image
+              <Carrusel />
+              {/* <Image
                 src="/assets/salamanca1.jpg"
                 alt="Salamanca"
                 width={500} // Aumentar el ancho
@@ -190,7 +192,7 @@ const LandingPage = () => {
                   maxWidth: "100%", // Asegura que no exceda el ancho de la pantalla
                   height: "auto", // Mantiene la proporción
                 }}
-              />
+              /> */}
             </Box>
           </Grid>
           <Grid size={12}>
