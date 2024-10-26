@@ -95,6 +95,8 @@ const LandingPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        height: "100%",
+        gap: "50px",
       }}
     >
       <Box
@@ -106,9 +108,10 @@ const LandingPage = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          borderRadios: "30px",
-          backgroundColor: "#f4f4f9", // Color de fondo más suave
-          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Sombra más definida
+          borderRadius: "30px",
+          backgroundColor: "#f4f4f9",
+          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+          margintTop: "200px",
 
           // backgroundImage: "url('../../../assets/fondo1.jpg')",
         }}
@@ -169,20 +172,25 @@ const LandingPage = () => {
           <Grid size={12}>
             <Box
               className="image-container"
-              // sx={{ marginLeft: "2rem", marginRight: "1rem" }}
+              sx={{
+                marginLeft: "auto", // Añadir auto para centrar horizontalmente
+                marginRight: "auto", // Añadir auto para centrar horizontalmente
+                display: "flex",
+                justifyContent: "center", // Centrar la imagen
+                width: { xs: "90%", sm: "80%", md: "100%" }, // Ajusta el ancho según el tamaño de la pantalla
+                height: "auto", // Mantener la proporción de la imagen
+              }}
             >
               <Image
                 src="/assets/salamanca1.jpg"
                 alt="Salamanca"
-                width={500}
-                height={300}
+                width={500} // Aumentar el ancho
+                height={300} // Aumentar la altura
                 style={{
-                  maxWidth: "100%", // Para que no exceda el ancho del contenedor/pantalla
-                  maxHeight: "100vh", // Limita la altura a la altura total de la pantalla
-                  width: "auto",
-                  height: "auto",
+                  maxWidth: "100%", // Asegura que no exceda el ancho de la pantalla
+                  height: "auto", // Mantiene la proporción
                 }}
-              />{" "}
+              />
             </Box>
           </Grid>
           <Grid size={12}>
@@ -256,7 +264,6 @@ const LandingPage = () => {
       </Box>
       {showForm && (
         <ContactForm />
-
         // <Box
         //   component={Paper}
         //   sx={{
