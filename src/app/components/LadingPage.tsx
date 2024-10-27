@@ -9,6 +9,7 @@ import {
   TextField,
   Select,
   Box,
+  Link,
   Paper,
   FormControl,
   InputLabel,
@@ -21,6 +22,7 @@ import Image from "next/image";
 import "./LandingPage.css";
 import ContactForm from "./ContactForm";
 import Carrusel from "./Carrusel";
+import Collage from "./Collage";
 
 const nacionalidades = [
   "Argentina",
@@ -63,8 +65,6 @@ const paisesResidencia = [
   "Uruguay",
   "Venezuela",
 ];
-
-import Imagen1 from "../../assets/salamanca1.jpg";
 
 const LandingPage = () => {
   const [showForm, setShowForm] = useState<boolean>(false);
@@ -182,8 +182,7 @@ const LandingPage = () => {
                 height: "auto", // Mantener la proporción de la imagen
               }}
             >
-              <Carrusel />
-              {/* <Image
+              <Image
                 src="/assets/salamanca1.jpg"
                 alt="Salamanca"
                 width={500} // Aumentar el ancho
@@ -192,7 +191,7 @@ const LandingPage = () => {
                   maxWidth: "100%", // Asegura que no exceda el ancho de la pantalla
                   height: "auto", // Mantiene la proporción
                 }}
-              /> */}
+              />
             </Box>
           </Grid>
           <Grid size={12}>
@@ -209,13 +208,84 @@ const LandingPage = () => {
                 marginBottom: "1rem",
               }}
             >
+              <br></br>
               ¡Estudia en Salamanca y vive una experiencia única! Especialmente
               para estudiantes latinoamericanos, descubre la historia, cultura y
               excelencia académica de esta ciudad universitaria. ¡Tu futuro te
               espera en Salamanca!
+              <br></br>
             </Typography>
           </Grid>
           <Grid size={12}>
+            <Box
+              className="image-container"
+              sx={{
+                marginLeft: "auto", // Añadir auto para centrar horizontalmente
+                marginRight: "auto", // Añadir auto para centrar horizontalmente
+                display: "flex",
+                justifyContent: "center", // Centrar la imagen
+                width: { xs: "90%", sm: "80%", md: "100%" }, // Ajusta el ancho según el tamaño de la pantalla
+                height: "auto", // Mantener la proporción de la imagen
+              }}
+            >
+              <Image
+                src="/assets/foto1.png"
+                alt="Salamanca"
+                width={500} // Aumentar el ancho
+                height={300} // Aumentar la altura
+                style={{
+                  maxWidth: "100%", // Asegura que no exceda el ancho de la pantalla
+                  height: "auto", // Mantiene la proporción
+                }}
+              />
+              <br></br>
+              <br></br>
+            </Box>
+          </Grid>
+          <Grid size={12}>
+            <Typography
+              variant="h5"
+              component="p"
+              gutterBottom
+              sx={{
+                fontFamily: "'Roboto', sans-serif",
+                fontSize: "1rem",
+                fontWeight: 400,
+                color: "#333333", // Un gris oscuro suave y legible
+                lineHeight: 1.6,
+                marginBottom: "1rem",
+              }}
+            >
+              <br></br> ¡Cumple tu sueño de estudiar en Europa! Ayudamos a
+              estudiantes latinoamericanos a hacer realidad su meta académica en
+              el extranjero. ¡El futuro que imaginas está a un paso!
+              <br></br>
+            </Typography>
+          </Grid>
+          <Grid size={12}>
+            <Carrusel />
+            <br></br>
+            <br></br>
+            <Typography
+              variant="h5"
+              component="p"
+              gutterBottom
+              sx={{
+                fontFamily: "'Roboto', sans-serif",
+                fontSize: "1rem",
+                fontWeight: 400,
+                color: "#333333", // Un gris oscuro suave y legible
+                lineHeight: 1.6,
+                marginBottom: "1rem",
+              }}
+            >
+              <br></br>
+              Conéctate con el mundo mientras viajas! Te ayudamos a vincularte y
+              hacer amigos de todo el mundo a través de increíbles experiencias:
+              viajes, excursiones, senderismos, fiestas de bienvenida, karaoke,
+              deportes, intercambios de idiomas y mucho más. ¡La aventura
+              <br></br>
+            </Typography>
             {/* <section id="benefits">
               <Typography
                 sx={{
@@ -247,6 +317,33 @@ const LandingPage = () => {
             </section>{" "} */}
           </Grid>
           <Grid size={12}>
+            <Collage />
+          </Grid>
+          <Grid size={12}>
+            <br></br>
+            <br></br>
+            <Typography
+              variant="h5"
+              component="p"
+              gutterBottom
+              sx={{
+                fontFamily: "'Roboto', sans-serif",
+                fontSize: "1rem",
+                fontWeight: 400,
+                color: "#333333", // Un gris oscuro suave y legible
+                lineHeight: 1.6,
+                marginBottom: "1rem",
+              }}
+            >
+              <br></br>
+              Conéctate con el mundo mientras viajas! Te ayudamos a vincularte y
+              hacer amigos de todo el mundo a través de increíbles experiencias:
+              viajes, excursiones, senderismos, fiestas de bienvenida, karaoke,
+              deportes, intercambios de idiomas y mucho más. ¡La aventura
+              <br></br>
+            </Typography>
+          </Grid>
+          <Grid size={12}>
             {!showForm && (
               <Button
                 variant="contained"
@@ -257,129 +354,133 @@ const LandingPage = () => {
                   padding: "10px 20px",
                 }}
                 onClick={hanleShowForm}
+                href="#contactForm"
               >
                 ¡Comienza tu aventura!
               </Button>
             )}
           </Grid>
         </Grid>
+        {showForm && (
+          <section id="contactForm">
+            <ContactForm />
+          </section>
+
+          // <Box
+          //   component={Paper}
+          //   sx={{
+          //     height: "auto",
+          //     width: "95%",
+          //     padding: "2rem",
+          //     display: "flex",
+          //     flexDirection: "column",
+          //     alignItems: "center",
+          //     borderRadios: "30px",
+          //     backgroundColor: "#f4f4f9", // Color de fondo más suave
+          //     boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Sombra más definida }}
+          //   }}
+          // >
+          //   <Typography variant="h6" component="h2" gutterBottom>
+          //     Ingresa tu información para que te contactemos y comiences esta
+          //     travesía.<br></br>
+          //   </Typography>
+          //   <form>
+          //     <Grid container spacing={2} sx={{ width: "100%" }}>
+          //       <Grid size={12}>
+          //         <TextField
+          //           label="Tu nombre"
+          //           variant="outlined"
+          //           fullWidth
+          //           required
+          //         />
+          //       </Grid>
+          //       <Grid size={12}>
+          //         <TextField
+          //           label="Apellidos"
+          //           variant="outlined"
+          //           fullWidth
+          //           required
+          //         />
+          //       </Grid>
+          //       <Grid size={12}>
+          //         <TextField
+          //           label="Tu correo"
+          //           variant="outlined"
+          //           type="email"
+          //           fullWidth
+          //           required
+          //         />
+          //       </Grid>
+          //       <Grid size={12}>
+          //         <TextField
+          //           label="Número de whatsApp"
+          //           variant="outlined"
+          //           fullWidth
+          //           required
+          //         />
+          //       </Grid>
+          //       <Grid size={12}>
+          //         <FormControl fullWidth variant="outlined" required>
+          //           <InputLabel>Nacionalidad</InputLabel>
+          //           <Select
+          //             value={nacionalidad}
+          //             onChange={handleNacionalidadChange}
+          //             label="Nacionalidad"
+          //           >
+          //             {nacionalidades.map((nacion) => (
+          //               <MenuItem key={nacion} value={nacion}>
+          //                 {nacion}
+          //               </MenuItem>
+          //             ))}
+          //           </Select>
+          //         </FormControl>
+          //       </Grid>
+          //       <Grid size={12}>
+          //         <FormControl fullWidth variant="outlined" required>
+          //           <InputLabel>País de residencia</InputLabel>
+          //           <Select
+          //             value={paisResidencia}
+          //             onChange={handlePaisResidenciaChange}
+          //             label="País de residencia"
+          //           >
+          //             {paisesResidencia.map((pais) => (
+          //               <MenuItem key={pais} value={pais}>
+          //                 {pais}
+          //               </MenuItem>
+          //             ))}
+          //           </Select>
+          //         </FormControl>
+          //       </Grid>
+          //       <Grid size={12}>
+          //         <TextField
+          //           label="Estudios que desea realizar"
+          //           variant="outlined"
+          //           fullWidth
+          //           multiline
+          //           rows={4}
+          //           required
+          //         />
+          //       </Grid>
+          //       <Grid size={12}>
+          //         <Button
+          //           variant="contained"
+          //           color="primary"
+          //           onClick={hanleSubmit}
+          //           sx={{ borderRadius: "30px", padding: "10px 20px" }}
+          //         >
+          //           Enviar información
+          //         </Button>
+          //       </Grid>
+          //       <Grid size={12}>
+          //         {mensajeEnviado && (
+          //           <Typography>Información enviado con éxito.</Typography>
+          //         )}
+          //       </Grid>
+          //     </Grid>
+          //   </form>
+          // </Box>
+        )}
       </Box>
-      {showForm && (
-        <ContactForm />
-        // <Box
-        //   component={Paper}
-        //   sx={{
-        //     height: "auto",
-        //     width: "95%",
-        //     padding: "2rem",
-        //     display: "flex",
-        //     flexDirection: "column",
-        //     alignItems: "center",
-        //     borderRadios: "30px",
-        //     backgroundColor: "#f4f4f9", // Color de fondo más suave
-        //     boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Sombra más definida }}
-        //   }}
-        // >
-        //   <Typography variant="h6" component="h2" gutterBottom>
-        //     Ingresa tu información para que te contactemos y comiences esta
-        //     travesía.<br></br>
-        //   </Typography>
-        //   <form>
-        //     <Grid container spacing={2} sx={{ width: "100%" }}>
-        //       <Grid size={12}>
-        //         <TextField
-        //           label="Tu nombre"
-        //           variant="outlined"
-        //           fullWidth
-        //           required
-        //         />
-        //       </Grid>
-        //       <Grid size={12}>
-        //         <TextField
-        //           label="Apellidos"
-        //           variant="outlined"
-        //           fullWidth
-        //           required
-        //         />
-        //       </Grid>
-        //       <Grid size={12}>
-        //         <TextField
-        //           label="Tu correo"
-        //           variant="outlined"
-        //           type="email"
-        //           fullWidth
-        //           required
-        //         />
-        //       </Grid>
-        //       <Grid size={12}>
-        //         <TextField
-        //           label="Número de whatsApp"
-        //           variant="outlined"
-        //           fullWidth
-        //           required
-        //         />
-        //       </Grid>
-        //       <Grid size={12}>
-        //         <FormControl fullWidth variant="outlined" required>
-        //           <InputLabel>Nacionalidad</InputLabel>
-        //           <Select
-        //             value={nacionalidad}
-        //             onChange={handleNacionalidadChange}
-        //             label="Nacionalidad"
-        //           >
-        //             {nacionalidades.map((nacion) => (
-        //               <MenuItem key={nacion} value={nacion}>
-        //                 {nacion}
-        //               </MenuItem>
-        //             ))}
-        //           </Select>
-        //         </FormControl>
-        //       </Grid>
-        //       <Grid size={12}>
-        //         <FormControl fullWidth variant="outlined" required>
-        //           <InputLabel>País de residencia</InputLabel>
-        //           <Select
-        //             value={paisResidencia}
-        //             onChange={handlePaisResidenciaChange}
-        //             label="País de residencia"
-        //           >
-        //             {paisesResidencia.map((pais) => (
-        //               <MenuItem key={pais} value={pais}>
-        //                 {pais}
-        //               </MenuItem>
-        //             ))}
-        //           </Select>
-        //         </FormControl>
-        //       </Grid>
-        //       <Grid size={12}>
-        //         <TextField
-        //           label="Estudios que desea realizar"
-        //           variant="outlined"
-        //           fullWidth
-        //           multiline
-        //           rows={4}
-        //           required
-        //         />
-        //       </Grid>
-        //       <Grid size={12}>
-        //         <Button
-        //           variant="contained"
-        //           color="primary"
-        //           onClick={hanleSubmit}
-        //           sx={{ borderRadius: "30px", padding: "10px 20px" }}
-        //         >
-        //           Enviar información
-        //         </Button>
-        //       </Grid>
-        //       <Grid size={12}>
-        //         {mensajeEnviado && (
-        //           <Typography>Información enviado con éxito.</Typography>
-        //         )}
-        //       </Grid>
-        //     </Grid>
-        //   </form>
-        // </Box>
-      )}
     </Container>
   );
 };
