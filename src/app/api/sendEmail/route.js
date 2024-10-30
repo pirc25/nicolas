@@ -1,0 +1,129 @@
+import nodemailer from "nodemailer";
+
+export async function POST(req, res) {
+  const { to, subject, text } = req.body;
+
+  // Set up Nodemailer transporter
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "rchrdbrneo@gmail.com",
+      pass: "srcy yjga slvy fjkg",
+    },
+  });
+
+  const mailOptions = {
+    from: "rchrdbrneo@gmail.com",
+    to: "richardburneo25@gmail.com",
+    subject: "subject",
+    text: "text",
+  };
+
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    return new Response(JSON.stringify({ message: "Email sent", info: info }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    console.log(error);
+    return new Response(
+      JSON.stringify({ error: "Failed to send email", details: error.message }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+}
+
+// const nodemailer = require("nodemailer");
+
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: "rchrdbrneo@gmail.com",
+//     pass: "072571346",
+//   },
+// });
+
+// const mailOptions = {
+//   from: "rchrdbrneo@gmail.com",
+//   to: "richardburneo@gmail.com",
+//   subject: "Asunto del correo",
+//   text: "Este es el cuerpo del correo.",
+// };
+
+// transporter.sendMail(mailOptions, (error, info) => {
+//   if (error) {
+//     console.log("Error al enviar el correo:", error);
+//   } else {
+//     console.log("Correo enviado:", info.response);
+//   }
+// });
+
+// // src/app/api/sendEmail/route.js
+// import nodemailer from "nodemailer";
+
+// export async function POST(request) {
+//   console.log("Ingreso");
+//   const {
+//     user_name,
+//     user_apellidos,
+//     user_email,
+//     user_whatsapp,
+//     nacionalidad,
+//     paisResidencia,
+//     estudios,
+//   } = await request.json();
+
+//   // Configurar el transporte de Nodemailer
+//   let transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: "rchrdbrneo@gmail.com", // Reemplaza con tu correo
+//       pass: "072571346", // Reemplaza con la contraseña del correo o una clave de aplicación
+//     },
+//   });
+
+//   const message = `Detalles del usuario:
+//   Nombre: ${user_name}
+//   Apellidos: ${user_apellidos}
+//   Correo: ${user_email}
+//   WhatsApp: ${user_whatsapp}
+//   Nacionalidad: ${nacionalidad}
+//   País de Residencia: ${paisResidencia}
+//   Estudios: ${estudios}
+//   `;
+
+//   try {
+//     // Enviar correo al dueño de la app
+//     await transporter.sendMail({
+//       from: user_email,
+//       to: "rchrdbrneo@gmail.com", // Reemplaza con tu correo como dueño de la app
+//       subject: `Nuevo mensaje de ${user_name}`,
+//       text: message,
+//       html: `<p>Has recibido un nuevo mensaje de ${user_name} (${user_email}):</p><p>${message}</p>`,
+//     });
+
+//     // Enviar correo de confirmación al usuario
+//     await transporter.sendMail({
+//       from: "rchrdbrneo@gmail.com", // Reemplaza con tu correo como remitente
+//       to: user_email,
+//       subject: "Gracias por contactarnos",
+//       text: "Gracias por tu mensaje, nos pondremos en contacto contigo pronto.",
+//       html: `<p>Hola ${user_name},</p><p>Gracias por contactarnos. Pronto te responderemos.</p>`,
+//     });
+
+//     return new Response(
+//       JSON.stringify({ message: "Correos enviados con éxito" }),
+//       { status: 200 }
+//     );
+//   } catch (error) {
+//     console.error("Error al enviar correos:", error);
+//     return new Response(
+//       JSON.stringify({ message: "Error al enviar correos" }),
+//       { status: 500 }
+//     );
+//   }
+// }
