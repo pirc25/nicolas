@@ -11,14 +11,14 @@ export default function Collage() {
         justifyContent: "center",
         alignItems: "center",
         width: "100%", // Ajuste para que ocupe todo el ancho de la pantalla
-        height: "100vh", // Ajuste para que ocupe todo el alto de la pantalla
+        height: "auto", // Ajuste para que ocupe todo el alto de la pantalla
         overflow: "hidden",
       }}
     >
       <Box
         sx={{
           width: "90%",
-          height: "auto",
+          height: "100%",
           overflowY: "scroll",
         }}
       >

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Box, Typography, MobileStepper, Button } from "@mui/material";
-import SwipeableViews from "react-swipeable-views";
+import SwipeableViews from "react-swipeable-views-react-18-fix";
 import { autoPlay } from "react-swipeable-views-utils";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
