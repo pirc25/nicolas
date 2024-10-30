@@ -23,6 +23,7 @@ import "./LandingPage.css";
 import ContactForm from "./ContactForm";
 import Carrusel from "./Carrusel";
 import Collage from "./Collage";
+import { useMediaQuery } from "react-responsive";
 
 const nacionalidades = [
   "Argentina",
@@ -71,6 +72,7 @@ const LandingPage = () => {
   const [mensajeEnviado, setMensajeEnviado] = useState<boolean>(false);
   const [nacionalidad, setNacionalidad] = useState("");
   const [paisResidencia, setPaisResidencia] = useState("");
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const hanleShowForm = () => {
     setShowForm(true);
@@ -239,7 +241,6 @@ const LandingPage = () => {
                 }}
               />
               <br></br>
-              <br></br>
             </Box>
           </Grid>
           <Grid size={12}>
@@ -262,31 +263,31 @@ const LandingPage = () => {
               <br></br>
             </Typography>
           </Grid>
-          <Grid size={12}>
-            <Carrusel />
-            <br></br>
-            <br></br>
-            <Typography
-              variant="h5"
-              component="p"
-              gutterBottom
-              sx={{
-                fontFamily: "'Roboto', sans-serif",
-                fontSize: "1rem",
-                fontWeight: 400,
-                color: "#333333", // Un gris oscuro suave y legible
-                lineHeight: 1.6,
-                marginBottom: "1rem",
-              }}
-            >
-              <br></br>
-              Conéctate con el mundo mientras viajas! Te ayudamos a vincularte y
-              hacer amigos de todo el mundo a través de increíbles experiencias:
-              viajes, excursiones, senderismos, fiestas de bienvenida, karaoke,
-              deportes, intercambios de idiomas y mucho más. ¡La aventura
-              <br></br>
-            </Typography>
-            {/* <section id="benefits">
+          {isMobile ? (
+            <Grid size={12}>
+              <Carrusel />
+              <Typography
+                variant="h5"
+                component="p"
+                gutterBottom
+                sx={{
+                  fontFamily: "'Roboto', sans-serif",
+                  fontSize: "1rem",
+                  fontWeight: 400,
+                  color: "#333333", // Un gris oscuro suave y legible
+                  lineHeight: 1.6,
+                  marginBottom: "1rem",
+                }}
+              >
+                <br></br>
+                Conéctate con el mundo mientras viajas! Te ayudamos a vincularte
+                y hacer amigos de todo el mundo a través de increíbles
+                experiencias: viajes, excursiones, senderismos, fiestas de
+                bienvenida, karaoke, deportes, intercambios de idiomas y mucho
+                más. ¡La aventura
+                <br></br>
+              </Typography>
+              {/* <section id="benefits">
               <Typography
                 sx={{
                   fontFamily: "Oswald, sans-serif",
@@ -315,34 +316,38 @@ const LandingPage = () => {
                 </ul>
               </Typography>
             </section>{" "} */}
-          </Grid>
-          <Grid size={12}>
-            <Collage />
-          </Grid>
-          <Grid size={12}>
-            <br></br>
-            <br></br>
-            <Typography
-              variant="h5"
-              component="p"
-              gutterBottom
-              sx={{
-                fontFamily: "'Roboto', sans-serif",
-                fontSize: "1rem",
-                fontWeight: 400,
-                color: "#333333", // Un gris oscuro suave y legible
-                lineHeight: 1.6,
-                marginBottom: "1rem",
-              }}
-            >
-              <br></br>
-              Conéctate con el mundo mientras viajas! Te ayudamos a vincularte y
-              hacer amigos de todo el mundo a través de increíbles experiencias:
-              viajes, excursiones, senderismos, fiestas de bienvenida, karaoke,
-              deportes, intercambios de idiomas y mucho más. ¡La aventura
-              <br></br>
-            </Typography>
-          </Grid>
+            </Grid>
+          ) : (
+            <>
+              <Grid size={12}>
+                <Collage />
+              </Grid>
+              <Grid size={12}>
+                <br></br>
+                <Typography
+                  variant="h5"
+                  component="p"
+                  gutterBottom
+                  sx={{
+                    fontFamily: "'Roboto', sans-serif",
+                    fontSize: "1rem",
+                    fontWeight: 400,
+                    color: "#333333", // Un gris oscuro suave y legible
+                    lineHeight: 1.6,
+                    marginBottom: "1rem",
+                  }}
+                >
+                  <br></br>
+                  Conéctate con el mundo mientras viajas! Te ayudamos a
+                  vincularte y hacer amigos de todo el mundo a través de
+                  increíbles experiencias: viajes, excursiones, senderismos,
+                  fiestas de bienvenida, karaoke, deportes, intercambios de
+                  idiomas y mucho más. ¡La aventura
+                  <br></br>
+                </Typography>
+              </Grid>
+            </>
+          )}
           <Grid size={12}>
             {!showForm && (
               <Button
